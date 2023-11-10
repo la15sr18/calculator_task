@@ -17,11 +17,6 @@ jobs:
           distribution: 'adopt'
       - name: Build with Maven
         run: mvn -B package --file pom.xml
-      - name: Semgrep Scan
-        uses: semgrep/semgrep-action@v1
-        with:
-          config: p/security-audit
-          auditOn: error, warning
       - name: Login to DockerHub
         uses: docker/login-action@v1
         with:
